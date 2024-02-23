@@ -1,14 +1,31 @@
+import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Following from "./pages/Following";
+import { publicRoutes } from "~/routers";
+import { DefaultLayout } from "~/components/Layout";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/following" element={<Following />} />
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+
+            let Layout = DefaultLayout;
+
+            if (route.layout)
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={
+                    <Layout>
+                      <Page />
+                    </Layout>
+                  }
+                />
+              );
+          })}
         </Routes>
       </div>
     </Router>
