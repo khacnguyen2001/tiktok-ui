@@ -105,3 +105,24 @@
 .search-result {
   width: 361px;
 }
+
+h4.search-title {
+  color: #000;
+  padding: 9px 12px;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+.more-btn {
+  border: none;
+  cursor: pointer;
+  margin-left: 24px;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  background: transparent;
+  padding: 4px 8px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+}
